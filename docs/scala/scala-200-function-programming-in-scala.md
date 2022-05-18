@@ -6,6 +6,8 @@ nav_order: 200
 ---
 
 # 1부 함수형 프로그래밍 입문
+
+
 ## 1 함수형 프로그래밍이란 무엇인가?
 functional programming이란 side effect가 없는 pure function들로만 구축한다.
 
@@ -94,10 +96,55 @@ buyCoffee를 직접 재사용하여 buyCoffees 함수를 정의할 수 있어었
 def coalesce(charges: List[Charge]): List[Charge] =
   charges.groupBy(_.cc).values.map(_.reduce(_ combine _)).toList
 ```
-Charge를 일급 값으로 만들었기 때문에 청구건들을 카드별로 취합하는 함수를 쉽게 작성이 가능해 졌다.
+Charge를 일급값으로 만들었기 때문에 청구건들을 카드별로 취합하는 함수를 쉽게 작성이 가능해 졌다.
 _ combine _ 은 익명 함수를 위한 구문
 
 결과적으로 부수적인 효과가 발생하는 부분이 생길수 밖에 없다.
 이런 함수는 관찰되지 않도록 외부에서 참조가 되지 않음을 보장할 수 있다면 변이가 가능히ㅏ고 뭔가를 기록할 수 있다.
 
 ### 1.2 (순수)함수란 구체적으로 무엇인가?
+FP(functional programing)은 순수 함수들로 프로그래밍 하는것이라고 말했다.
+순수 함수는 side effect가 없는 함수라며 입력으로 뭔가를 계산하는것 외에 어떤 관찰 가능한 영향도 미치지 않는다.
+입력 값이 같다면 항상 같은 값을 돌려준다. 이러한 개념을 referential transparency 참조 투명성 이라는 개념을 통해 공식화할 수 있다.
+참조 투명성은 함수가 아닌 expression 표현식의 한 속성이다.
+표현식이란 하나의 결과로 평가되는 코드 조각이다.
+2 + 3은 항상 같은 값을 꺼내고 2 + 3을 5로 모두 치환하여도 동일한 프로그램이 된다.
+표현식을 평가 결과로 바꿔도 동일하고 이것을 참조에 투평한 것이라고 한다.
+
+### 1.3 참조 투명성, 순수성, 그리고 치환 모형
+```scala
+class Cafe {
+  def buyCoffee(cc: CreditCard, p: Payments): Coffee = {
+    val cup = new Coffee()
+    p.charge(cc, cup.price) // side effect 하지만 검사성은 높아졌다.
+    cup
+  }
+}
+```
+순수함수라면 new Coffee()가 평가 결과기 때문에 buyCoffee(_, _)는 new Coffee()와 동일해야한다.
+이부분은 거짓이기 때문에 투명하지 않다고 할수 있다.
+참조 투명성은 조건이 값으로 대표된다는 불변 조건을 강제하고 이러한 제약을 지키면 substitution model 치환 모형이 가능해진다.
+표현식을 전개 하고 값으로 치환해서 가장 간단한 형태로 축약하면 된다.
+등치 대 등치 치환을 통해 진행이 되고ㅗ 참조 투명성은 프로그램에 대한 등식적 추론을 가능하게 한다.
+
+```scala
+val x = "hello"
+val y1 = x.reverse
+val y2 = x.reverse
+
+val x = new StringBuilder("hello")
+val y1 = x.append(" world")
+val y2 = x.append(" world")
+```
+위의 코드는 참조 x를 hello로 치환하더라도 결과가 같고 참조에 투명하다고 할수 있다.
+하지만 아래 코드는 x가 변형이 되기 때문에 append함수는 참조에 투명하지 않다고 할수 있다.
+치환 모델은 추론이 간단하지만 그렇지 않으면 추론이 어려워진다.
+모듈적인 프로그램은 component로 구성되어 구성요소의 의미와 구성요소들끼리 합성에 관한 규칙들에만 의존한다.
+즉 구성요소 들끼리 합성 가능하다. 이것은 입력과 결과가 분리되어 블랙박스의 형태기 때문에 어떻게 쓰이는지 신경 쓰지 않을 수 있기 때문에 재사용할 수 있다.
+
+### 1.4 요약
+functional programing은 순수함수로만 구축하고 순수함수들은 입력과 출력의 관심사가 분리되어 합성이 편리하고 재사용성이 뛰어나다.
+이러한 순수함수를 구현하기 위해서는 참조에 투명하게 만들고 치환이 가능하도록 해야한다.
+
+
+## 2 스칼라로 함수형 프로그래밍 시작하기
