@@ -4,4 +4,6 @@ title: scala
 nav_order: 1
 has_children: true
 permalink: /docs/scala
+sitemap:
+   exclude: 'yes'
 ---
