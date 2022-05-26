@@ -148,3 +148,93 @@ functional programing은 순수함수로만 구축하고 순수함수들은 입�
 
 
 ## 2 스칼라로 함수형 프로그래밍 시작하기
+꼬리 재귀 함수를 이용해서 루프를 작성하는법, 고차함수, 다형적 고차함수등을 다루는 법을 알아보자.
+
+### 2.1 스칼라 언어의 소개: 예제 하나
+```scala
+object MyModule { // 단일체 객체의 선언
+  def abs(n: Int): Int =
+    if (n < 0) -n
+    else n
+    
+  def private def formatAbs(x: Int) = { // private는 생략해도 되지만 노출되는 함수는 반환형을 명시하자!
+    val msg = "The absolute value of %d is % d"
+    msg.format(x, abs(x))
+  }
+  
+  def main(args: Array[String]): Unit = // 부수효과가 발생하는 부분 procedure 불순함수
+    println(formatAbs(-42))
+}
+```
+
+### 2.2 프로그램의 실행
+sbt, scalac, REPL등의 방식으로 스칼라를 사용할수 있다.
+* sbt: 스칼라용 빌드 TOOL
+* scalac: 스칼라 컴파일러
+* scala: 스칼라 해석기
+* REPL: 스탈라 해석기의 대화식 모드
+
+### 2.3 모듈, 객체, 이름공간
+MyModule 객체 안에 abs 가 정의되어 있기 때문에 MyModule은 abs가 속한 이름공간이다.
+스칼라의 모든 값은 객체이고 객체는 0개 또는 하나 이상의 멤버를 가질 수 있다.
+자신의 멤버에게 이름 공간을 주는 목적인 객체를 모듈이라고 부른다.
+2 + 1 은 2.+(1)과 동일하고 syntactic sugar(겉치레)를 제외한 infix(중위) 표기법이다.
+MyModule.abs(42) 대신 MyModule abs 42를 사용해도 동일하다.
+importing을 하면 abs(42) 처럼 객체 이름을 생략 할수있다. 
+import MyModule.abs 또는 모든 비전용을 포함하기 위해 import MyModule._을 통해서 할수 있다.
+
+### 2.4 고차 함수: 함수를 함수에 전달
+값으로서의 함수로 다른 함수를 인수로 받는 함수를 작성하는 것이 유용한 경우가 많다.
+그런 함수를 higher-order function 고차 함수, 고계 함수라고 부른다. 
+
+#### 2.4.1 잠깐 곁가지: 함수적으로 루프 작성하기
+```scala
+def factorial(n: Int): Int = {
+  @annotation.tailrec // 꼬리 호출 제거가 적용이 실패하면 컴파일 오류 발생 시키는 어노테이션
+  def go(n: Int, acc: Int): Int = // local definition 지역정의, 내부함수로 지역 정수나 문자열과 다름없다.
+    if (n <= 0) acc
+    else go(n-1, n*acc)
+    
+  go(n, 1)
+}
+```
+go함수는 자기 재귀를 하고있는데 재귀 호출이 꼬리 위치에서만 일어난다면 최적화를 한다.
+while문과 동일하게 바이트 코드로 컴파일 하는 최적화를 꼬리 호출 제거가 적용된다.
+
+#### 2.4.2 첫번째 고차 함수 작성
+```scala
+object MyModule {
+  private def formatAbs(x: Int) = {
+    val msg = "The absolute value of %d is %d."
+    msg.format(x, abs(x))
+  }
+  
+  private def formatFactorial(n: Int) = {
+    val msg = "The factorial of %d is %d."
+    msg.format(n, factorial(n))
+  }
+  
+  def main(args: Array[String]): Unit = {
+    println(formatAbs(-42))
+    println(formatFactorial(7))
+  }
+}
+```
+formatAbs와 formatFactorial은 거의 동일하다 formatResult로 일반화하는 함수를 만들어 보자
+
+```scala
+// 고차 함수의 인수에는 f 처럼 짧은 이름을 사용한든 것이 관례이다.
+// 인수로 들어가는 함수가 수행하는 일에 대해 구체적으로 알지 못하기 때문이다.
+def formatResult(name: String, n:Int, f: Int => Int) = {  
+  val msg = "The %s of %d is %d."
+  msg.format(name, n, f(n))
+}
+```
+f: Int => Int 는 int에서 int, int 화살표 int라고 읽으며 정수 하나를 받아서 정수 하나를 돌려준다는 뜻이다.
+abs나 factorial도 정수 하나를 받아서 하나를 돌려주기 때문에 형식에 부합하고 f인수로 넘겨줄수 있다.
+
+### 2.5 다형적 함수: 형식에 대한 추상
+정수를 받아 정수를 내어 주는 함수는 단형적 함수이다. 즉 한 형식의 자료에만 사용하는 함수였다.
+임의의 형식에 대해 작동하는 코드를 작성해야하는 경우도 많이 생긴다. 그런 함수를 다형적 함수라고 부른다.
+
+#### 2.5.1 다형적 함수의 예
