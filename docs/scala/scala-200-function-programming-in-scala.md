@@ -238,3 +238,86 @@ abs나 factorial도 정수 하나를 받아서 하나를 돌려주기 때문에 
 임의의 형식에 대해 작동하는 코드를 작성해야하는 경우도 많이 생긴다. 그런 함수를 다형적 함수라고 부른다.
 
 #### 2.5.1 다형적 함수의 예
+```scala
+def findFirst(ss: Array[String], key: String): Int = {
+  @annotation.tailrec
+  def loop(n: Int): Int = 
+    if (n >= ss.length) -1    // 배열을 지나치면 -1 
+    else if (ss(n) == key) n  // n번째 요소가 key와 동일하다면 n
+    else loop(n + 1)          // 그렇지 않다면 n을 증가
+    
+  loop(0)                     // 배열 첫번째 요소부터 시작
+}
+```
+Array[String]에서 검색하던 Array[Int]에서 검색하던 코드는 거의 동일할 것이다.
+
+```scala
+def findFirst[A](as: Array[A], p: A => Boolean): Int = {
+  @annotation.tailrec
+  def loop(n: Int): Int = 
+    if (n >= as.length) -1
+    else if (p(as(n))) n
+    else loop(n + 1)
+    
+  loop(0)
+}
+```
+이것은 generic function 일반적 함수라고 부르는 다형적 함수의 한 예이다.
+형식에 대한 추상을 적용하였고 형식 매개변수를 일반적으로 짧은 한글자 대문자로 지정한다.
+형식 매개변수 목록은 형식 변수를 도입하고 함수의 본문에서 참조할수 있다.
+형식 변수 A는 두곳에서 참조된다. 배열은 A타입 배열이고 함수 p는 반드시 A타입을 받아야한다.
+컴파일러는 모든 findFirst에서 형식 서명과 형식 변수를 참조가 동일한 형식임을 강제한다.
+
+#### 2.5.2 익명 함수로 고차 함수 호출
+```scala
+findFirst(Array(7, 9, 13), (x: Int) => x == 9)
+```
+익명 함수 또는 함수 리터럴을 지정해서 호출하는 것이 편한 경우가 많다.
+`Array(7, 9, 13)` 은 배열 리터럴 이고
+`(x: Int) => x == 9` 는 함수 리터럴 또는 익명 함수이다.
+`(x: Int) => x == 9`의 경우 `(x) => x == 9` 처럼 형식 주해를 생략할 수 있다.
+
+```scala
+val lessThan = new Function2[Int, Int, Boolean] { // 스칼라 표준 라이브러리의 trait(인터페이스)
+  def apply(a: Int, b: Int) = a < b
+}
+```
+함수 리터럴인 (a, b) => a < b는 위와 같은 apply 메서드를 가진 객체의 구문적 겉치레이다.
+스칼라의 함수는 보통 스칼라 객체이고 함수는 일급 값이다. 일급함수와 메서드를 둘 다 함수라고 부른다.
+
+### 2.6 형식에서 도출된 구현
+다형적 형식은 가능성 공간이 축소 되기 때문에 partial application(부분 적용)이라고 부르는 고차 함수를 사용한다.
+partial 함수는 값 하나와 함수 하나를 받고 인수가 하나인 함수를 결과로 돌려준다.
+partial은 이 함수가 주어진 인수들 일부에만 적용된다는 의미의 이름이다.
+```scala
+def partial1[A, B, C](a: A, f: (A, B) => C): B => C
+```
+이 함수는 인자 두개를 받는데, A와 A, B를 받고 C를 내주는 함수이다.
+돌려주는 값 역시 B => C 형식의 함수이다.
+
+```scala
+def partial1[A, B, C](a: A. f: (A, B) => C): B => C =
+  (b: B) => f(a, b) // 익명 함수의 본문, 추론이 가능하기 때문에 b의 타입은 생략 가능하다.
+```
+추가한 코드는 B형식의 값 b를 받는 함수에 돌려준다는 의미이다 이부분은 익명 함수의 본문이된다.
+c는 f의 반환형이기때문에 f에 A, B를 넘겨주는 방법 밖에 없다.
+방버이 한가지이기 때문에 b의 타입은 추론이 가능하고 생략이 할수 있다.
+
+```scala
+def curry[A,B,C](f: (A, B) => C): A => (B => C) =
+  a => b => f(a, b)
+
+def uncurry[A,B,C](f: A => B => C): (A, B) => C =
+  (a, b) => f(a)(b)
+```
+
+```scala
+def compose[A,B,C](f: B => C, g: A => B): A => C =
+  a => f(g(a))
+```
+함수 합성의 예제이다. 표준라이브러리는 compose와 andThen을 제공한다.
+`f compose g` 로 합성을 사용하면 되고 `g andThen f`와 같다
+
+### 2.7 요약
+스칼라의 기본적인 함수형 프로그래밍의 개념들이다. 
+재귀를 이용한 루프, 간단한함수와 프로그램, 고차함수, 다형적 함수를 구현해보았다.
