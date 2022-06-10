@@ -1,7 +1,7 @@
 ---
 layout: default
 title: error intellij Error during artifact deployment. See server log for details.
-parent: scala
+parent: error
 nav_order: 100
 ---
 

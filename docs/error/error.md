@@ -1,9 +1,9 @@
 ---
 layout: default
-title: scala
-nav_order: 3
+title: error
+nav_order: 2
 has_children: true
-permalink: /docs/scala
+permalink: /docs/error
 sitemap:
    exclude: 'yes'
 ---
