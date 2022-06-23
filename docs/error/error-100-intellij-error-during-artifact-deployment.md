@@ -4,11 +4,12 @@ title: intellij Error during artifact deployment. See server log for details.
 parent: error
 nav_order: 100
 ---
-
+## 에러
 intellij에서 톰캣에 빌드된 war를 제공(deploy) 하기 위한 기능을 사용중
 
 Error during artifact deployment. See server log for details. 와 같은 에러 발생
 
+## 해결법
 stackoverflow에 답변에 나와있는 해결법을 7가지의 순서로 적어 놓았다. 간단히보면
 
 1. 수동으로 artifact 빌드
