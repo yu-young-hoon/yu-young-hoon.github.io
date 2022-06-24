@@ -2,7 +2,7 @@
 layout: default
 title: intellij Error during artifact deployment. See server log for details.
 parent: error
-nav_order: 100
+nav_order: 102100
 ---
 ## 에러
 intellij에서 톰캣에 빌드된 war를 제공(deploy) 하기 위한 기능을 사용중

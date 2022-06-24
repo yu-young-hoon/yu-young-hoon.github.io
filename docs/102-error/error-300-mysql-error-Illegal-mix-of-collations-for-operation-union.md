@@ -2,7 +2,7 @@
 layout: default
 title: Mysql Error Illegal mix of collations for operation 'UNION' 쿼리 에러
 parent: error
-nav_order: 300
+nav_order: 102300
 ---
 
 ## 에러

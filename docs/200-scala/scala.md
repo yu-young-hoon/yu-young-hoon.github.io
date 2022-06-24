@@ -1,7 +1,7 @@
 ---
 layout: default
 title: scala
-nav_order: 4
+nav_order: 200
 has_children: true
 permalink: /docs/scala
 sitemap:

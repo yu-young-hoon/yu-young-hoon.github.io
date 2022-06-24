@@ -2,7 +2,7 @@
 layout: default
 title: Scala Iterators의 반복문이 동작 하지 않을때 Iterators Laziness
 parent: scala
-nav_order: 100
+nav_order: 200100
 ---
 
 Scala에서 List와 같은 concreate collection과 달리 Interator의 map은 지연동작합니다. 결과를 바로 계산하지 않기 때문에 기대하는 결과대로 동작하지 않습니다

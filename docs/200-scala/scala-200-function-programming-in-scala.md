@@ -2,7 +2,7 @@
 layout: default
 title: Scala 스칼라로 배우는 함수형 프로그래밍
 parent: scala
-nav_order: 200
+nav_order: 200200
 ---
 
 # 1부 함수형 프로그래밍 입문

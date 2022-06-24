@@ -1,9 +1,9 @@
 ---
 layout: default
-title: error
-nav_order: 3
+title: issue
+nav_order: 101
 has_children: true
-permalink: /docs/error
+permalink: /docs/issue
 sitemap:
    exclude: 'yes'
 ---
