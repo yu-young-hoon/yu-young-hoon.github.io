@@ -13,4 +13,5 @@ sitemap:
 * https://programmers.co.kr/learn/courses/12
 * https://hamait.tistory.com/554
 * https://developer.lightbend.com/start/?group=akka
-* https://joswlv.github.io/2018/05/27/scalaCovariance/ 공변 반공변 무공변
+* 공변 반공변 무공변 https://joswlv.github.io/2018/05/27/scalaCovariance/ 
+* 스칼라 코드 컨벤션 https://manincode.tistory.com/4
