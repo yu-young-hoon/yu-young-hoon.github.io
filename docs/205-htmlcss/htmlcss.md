@@ -8,4 +8,4 @@ sitemap:
    exclude: 'yes'
 ---
 
-* fontawesome icon https://fontawesome.com/icons?d=gallery
+* fontawesome icon <https://fontawesome.com/icons?d=gallery>
