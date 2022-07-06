@@ -1,6 +1,6 @@
 ---
 layout: default
-title: HTML/CSS
+title: htmlcss
 nav_order: 205
 has_children: true
 permalink: /docs/htmlcss
