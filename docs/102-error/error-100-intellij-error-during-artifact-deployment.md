@@ -27,5 +27,5 @@ stackoverflow에 답변에 나와있는 해결법을 7가지의 순서로 적어
 
 변경후 /Users/we/Documents/project/ad-web/build/libs/exploded로 경로를 변경하고 폴더를 직접 생성해주자 잘 실행되었다.
 
-## 참고링크
+### 참고링크
 * https://stackoverflow.com/questions/31705700/using-intellij-to-build-war-and-deploy-to-tomcat

@@ -16,5 +16,5 @@ nav_order: 101100
 ![](/docs/attach/intellij-queryDsl03.png)
 * generated source root 선택
 
-## 참고링크
+### 참고링크
 * https://stackoverflow.com/questions/26952078/intellij-cannot-resolve-symbol-on-import

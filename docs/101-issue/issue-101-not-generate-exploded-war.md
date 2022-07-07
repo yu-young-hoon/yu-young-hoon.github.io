@@ -10,5 +10,5 @@ nav_order: 101101
 
 task를 새로 만들어서 사용거나 intellij의 내장된 gradle을 사용하면 된다.
 
-## 참고링크 
+### 참고링크 
 * https://youtrack.jetbrains.com/issue/IDEA-176700

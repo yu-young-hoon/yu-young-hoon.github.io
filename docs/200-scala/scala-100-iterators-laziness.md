@@ -27,5 +27,5 @@ println을 위의 코드에서 사용한 이유는 lazy함을 보여주기 위�
 하지만 concreate collection처럼 동작하길 원했고 부가적인 기능이 
 동작하는 로직이 있다면 의도하지 않은 결과를 볼수 있습니다.
 
-참고링크
+### 참고링크
 * https://docs.scala-lang.org/overviews/collections-2.13/iterators.html#laziness

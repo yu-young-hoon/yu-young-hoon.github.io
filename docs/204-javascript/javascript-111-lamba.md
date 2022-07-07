@@ -33,5 +33,5 @@ function () {
 }();
 ```
 
-## 참고링크
+### 참고링크
 * https://ultimatecourses.com/blog/what-function-window-document-undefined-iife-really-means
