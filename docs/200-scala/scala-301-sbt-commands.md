@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Scala 명령어 목록
+title: Scala sbt 명령어 목록
 parent: scala
 nav_order: 200301
 ---
