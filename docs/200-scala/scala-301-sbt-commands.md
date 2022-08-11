@@ -2,7 +2,7 @@
 layout: default
 title: Scala 명령어 목록
 parent: scala
-nav_order: 200101
+nav_order: 200301
 ---
 
 SBT Simple Build Tool의 약자로 Maven이나 Gradle처럼 프로젝트를 셋팅하고 빌드를 관리해주는 툴입니다.
