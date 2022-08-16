@@ -16,7 +16,7 @@
 title: Simuruk wiki
 description: Simuruk wiki documentation
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://yu-young-hoon.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://page.simuruk.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json",
