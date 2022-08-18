@@ -1,11 +1,11 @@
 ---
 layout: default
-title: java method reference operator(:: 더블 콜론)
+title: java 메서드 참조 연산자
 parent: java
 nav_order: 201117
 ---
 
-### 메서드 참조 연산자
+### 메서드 참조 연산자 (method reference operator :: 더블 콜론)
 자바에서 :: 더블 콜론 기호를 사용해서 클래스의 method를 직접 호출하는 연산자 입니다.
 
 람다식에서 함수형 인터페이스와 동일하게 사용할수 있습니다.
