@@ -1,7 +1,12 @@
-## todo
+---
+layout: default
+title: etc 영어 기본
+parent: etc
+nav_order: 500103
+---
 
-==기본==
-<source>
+## 기본
+```html
 S + V + who(누구에게) + what(무엇을) + where(어디서) + why(왜) + how(어떻게) + when(언제)
 나는 = I (S)
 공부했다 = studied (V)
@@ -11,9 +16,9 @@ S + V + who(누구에게) + what(무엇을) + where(어디서) + why(왜) + how(
 친구와 함께 = with my friend (how)
 음악을 들으며 = while listening to music (how)
 오늘 = today (when)
-</source>
+```
 
-==be Verb==
+### be Verb
 * am/are/is
 * be interested in: 관심이 있다
 * be into: 빠져있다
@@ -24,7 +29,7 @@ S + V + who(누구에게) + what(무엇을) + where(어디서) + why(왜) + how(
 * 부정: i am not interested in music
 * 의문: are you interedsted in music
 
-==5형식==
+### 5형식
 * 1형식: 주어 동사
   ** it's raining outside(부사 문장형식에 포함 안됨)
 * 2형식: 주어 동사 주격보어
@@ -36,7 +41,7 @@ S + V + who(누구에게) + what(무엇을) + where(어디서) + why(왜) + how(
 * 5형식: 주어 동사 목적어 목적격보어
   ** my mom wants me to be a doctor
 
-==관사==
+### 관사
 명사를 따라다며 표현해주는 역할
 * a: 부정관사
   ** 자음 앞
@@ -51,11 +56,12 @@ S + V + who(누구에게) + what(무엇을) + where(어디서) + why(왜) + how(
   ** 특정 사물이지만 고유 명사가 아닐때
   ** 셀수 있어도 없어도 사용가능
 
-==능동태 수동태==
+### 능동태 수동태
 * It was done by me. (그것은 나에 의해 되어졌다.) - 수동태
 * I did it. (나는 그것을 했다.) - 능동태
 
-==grammar in use 01. am/is/are==
+
+## grammar in use 01. am/is/are
 * i am
 * he is, she is, it is
 * we are, you are, they are
@@ -65,27 +71,28 @@ S + V + who(누구에게) + what(무엇을) + where(어디서) + why(왜) + how(
 * we are not, you are not, they are not
 * my brother and i are(복수) good tennis players.
 
-==grammar in use 02. 의문문==
-===의문사가 없을때===
+
+## grammar in use 02. 의문문
+### 의문사가 없을때
 * am i
 * is he/she/it
 * are we/you/they (a student)
 
-===의문사가 있는 경우===
+### 의문사가 있는 경우
 * 의문사 where/what/who/how/why + is/are?
 * how old are you
 * what's your name
 
-===대답===
+### 대답
 * yes i am
 * no i am not
 * no he isn't
 * no you aren't
 
-==단어==
+### 단어
 * by + 노관사 + 단수명사: ~별로
 
-==참고 링크==
+### 참고 링크
 * [http://lab.siwonschool.com/?s=myclass&idx=28081211 시원스쿨랩]
 * [https://thispersonadoesnotexist.com/ This Persona does not exist]
 * [http://exam.ybmnet.co.kr YBM]]
