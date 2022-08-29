@@ -20,7 +20,7 @@ stackoverflow에 답변에 나와있는 해결법을 7가지의 순서로 적어
 6. 내용이 올바른지 확인하고
 7. 다시해봐라
 
-![](/docs/attach/intellij-error-artifacts.png)
+![](../../attach/intellij-error-artifacts.png)
 자세히 적어놓은 stackoverflow에 설명에도 나와있지만 intellij가 폴더를 자동으로 만들어 주지 않을때가 있다고 한것 처럼 나도 output의 위치를 libs 내부의 exploded폴더로 설정 해놓았는데 libs에 파일이 생성되고 있었다.
 
 기존에 output 경로는 /Users/we/Documents/project/ad-web/build/libs/exploded/파일이름.war로 되어있었는데

@@ -12,7 +12,7 @@ nav_order: 500100
 
 ## 포함되지 않는 문자열 정규식
 ^((?!my string).)*$
-![](/docs/attach/regex-look-ahead01.png)
+![](../../attach/regex-look-ahead01.png)
 
 ### english dictionary
 1. grep -P "(.).*\1" ./aa.txt

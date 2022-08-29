@@ -7,13 +7,13 @@ nav_order: 101100
 
 ## Q파일 인식이 안되고 generated source root로 등록이 안되있을때 해결 방법
 
-![](/docs/attach/intellij-queryDsl01.png)
+![](../../attach/intellij-queryDsl01.png)
 * File -> Invalidate Caches/Restart 캐시 무효화하고 다시 시작
 
-![](/docs/attach/intellij-queryDsl02.png)
+![](../../attach/intellij-queryDsl02.png)
 * 생성된 Q파일 폴더 오른쪽 클릭
 
-![](/docs/attach/intellij-queryDsl03.png)
+![](../../attach/intellij-queryDsl03.png)
 * generated source root 선택
 
 ### 참고링크

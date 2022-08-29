@@ -10,7 +10,7 @@ compile("org.springframework.boot:spring-boot-starter-freemarker")
 compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 compile group: 'org.apache.velocity', name: 'velocity', version: '1.6.2'
 ```
-![](/docs/attach/spring-template-engins.png)
+![](../../attach/spring-template-engins.png)
 
 * thymeleaf
   ** 기본으로 많이 사용

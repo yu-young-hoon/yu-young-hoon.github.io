@@ -13,7 +13,7 @@ nav_order: 102400
 * git push --mirror https://some-site/some-repo-back.git
 순서로 진행하였다.
 
-![](/docs/attach/git-error-mirror01.png)
+![](../../attach/git-error-mirror01.png)
 ```html
 ! [remote rejected]     hotfix/asdf-2164 -> hotfix/asdf-2164 (pre-receive hook declined)
 ...
@@ -23,7 +23,7 @@ error: failed to push some refs to 'https://some-site/some-repo-back.git'
 ```
 메시지 발생
 
-![](/docs/attach/git-error-mirror02.png)
+![](../../attach/git-error-mirror02.png)
 * 원인은 git의 레퍼런스 포인터 중 pull request가 문제였다
 * git show-ref | cut -d' ' -f2 | grep 'pull-request' | xargs -L1 git update-ref -d
 * 브랜치와 태그 래퍼런스는 남기고 pull request를 삭제하여 다시 진행하면 잘 작동 된다

@@ -6,7 +6,7 @@ nav_order: 201120
 ---
 
 ### Collection Framework
-* ![](/docs/attach/java-collections2.jpeg)
+* ![](../../attach/java-collections2.jpeg)
 * 모든 콜렉션의 상위 인터페이스로써 콜렉션들이 갖고 있는 핵심 메소드를 선언
 * (add, contain, isEmpty, remove, size, iterator ...)
   ! 인터페이스 ! 구현클래스                          ! 특징 !

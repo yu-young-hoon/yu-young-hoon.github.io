@@ -5,7 +5,7 @@ parent: spring
 nav_order: 300101
 ---
 
-![](/docs/attach/batch-obejct-relrationship.png)
+![](../../attach/batch-obejct-relrationship.png)
 
 ## 지켜야 하는 점
 대용량 데이터

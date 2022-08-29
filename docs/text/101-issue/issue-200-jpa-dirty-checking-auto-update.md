@@ -6,7 +6,7 @@ nav_order: 101200
 ---
 
 ## 이슈
-![](/docs/attach/jpa-dirty-chacking.png)
+![](../../attach/jpa-dirty-chacking.png)
 
 * update를 하지 않았는데도 jpa에서 update 호출
 * 영속성 상태인 entity가 변경된다면 transaction이 종료될때 dirty checking 되며 변경점을 자동으로 저장

@@ -25,7 +25,7 @@ public class Performance {
     }
 }
 ```
-![](/docs/attach/spring-aop-around.png)
+![](../../attach/spring-aop-around.png)
 
 * OOP만으로 모듈화 하기 힘든 부가 기능을 효과적으로 분리, 모듈화 하도록 도와주는 기술
 * 트랜젝션 분리(경계설정)을 프록시와 데코레이터 패턴으로 이해

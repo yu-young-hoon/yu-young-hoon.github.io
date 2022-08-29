@@ -5,6 +5,6 @@ parent: kotlin
 nav_order: 203100
 ---
 
-![](/docs/attach/kotlin-vs-java.png)
+![](../../attach/kotlin-vs-java.png)
 
-![](/docs/attach/kotlin-vs-java2.png)
+![](../../attach/kotlin-vs-java2.png)
