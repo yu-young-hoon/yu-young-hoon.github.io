@@ -4,6 +4,7 @@ title: General first class citizen 일급 객체
 parent: general
 nav_order: 300100
 ---
+
 ## 일급 객체란?
 일급 객체란 아래의 3조건이 만족해야한다.
 1. 변수나 데이터에 할당가능.
