@@ -19,7 +19,7 @@ nav_order: 409100
 * 변환 과정은 아래와 같다.
 1. x => power(2, x)
 2. powerCurried = A => B => power(A, B)
-3. powerCurried(2) = x => 2 => power(2, x)
+3. powerCurried(2) = 2 => B => power(2, B)
 
 ```scala
 def curry[A,B,C](f: (A, B) => C): A => (B => C) =
