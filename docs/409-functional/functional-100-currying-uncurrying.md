@@ -16,19 +16,23 @@ nav_order: 409100
 2. const squares = [1, 2, 3].map(powerCurried(2));
 * 1번의 경우 익명 함수로 인자를 하나 받아서 다중인수의 함수를 호출하지만
 * 2번의 경우 단일 함수로 바뀌었다.
-* 변환 과정은 아래와 같다.
+
+### 커링을 적용하는 과정은 아래와 같다.
 1. x => power(2, x)
 2. powerCurried = A => B => power(A, B)
-3. powerCurried(2) = 2 => B => power(2, B)
+3. powerCurried(2) = B => power(2, B)
+* 결과적으로 powerCurried(2)를 x => power(2, x) 대신 넣을수 있다.
 
+### 스칼라에서 커링
 ```scala
+// 커링과 언커링
 def curry[A,B,C](f: (A, B) => C): A => (B => C) =
   a: A => b: B => f(a: A, b: B)
 
 def uncurry[A,B,C](f: A => B => C): (A, B) => C =
   (a, b) => f(a)(b)
 
-// 언커링 커링 sum
+// 언커링 커링 sum 예시
 val sum: (Int, Int) => Int = (x, y) => x + y
 val curriedSum: Int => Int => Int = x => y => x + y
 
@@ -41,8 +45,6 @@ val numbers: List[Int] = List(1, 2, 3)
 numbers.map(n => sum(1, n)) shouldBe List(2, 3, 4)
 numbers.map(curriedSum(1)) shouldBe List(2, 3, 4)
 ```
-
-
 
 ### 참고
 * <https://medium.com/hannah-lin/fp-currying-3de006469b14>
