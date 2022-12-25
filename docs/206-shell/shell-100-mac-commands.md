@@ -10,3 +10,6 @@ nav_order: 206100
   * enthernet 목록 및 이름 보기
 * networksetup -setdnsservers "Belkin USB-C LAN" empty
   * dns 세팅
+
+## 맥 화면 끄기
+* pmset displaysleepnow
