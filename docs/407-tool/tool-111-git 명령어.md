@@ -60,8 +60,8 @@ git merge (--continue | --abort | --quit)
 
 
 ### 참고링크
-* <https://git-scm.com/docs git documents>
-* <https://backlog.com/git-tutorial/kr/intro/intro1_1.html git intro 1>
-* <https://backlog.com/git-tutorial/kr/stepup/stepup1_1.html git intro 2>
-* <https://blog.ull.im/engineering/2019/03/10/logs-on-git.html git commit message>
-* <https://meetup.toast.com/posts/106?fbclid=IwAR2-0JzQY1_nra1XjTKIOScI9cHvuSNJrernv0DfXHN8Ckc1HtEOk3KqmKU git commit message2>
+* <https://git-scm.com/docs>
+* <https://backlog.com/git-tutorial/kr/intro/intro1_1.html> git intro 1
+* <https://backlog.com/git-tutorial/kr/stepup/stepup1_1.html>  git intro 2
+* <https://blog.ull.im/engineering/2019/03/10/logs-on-git.html>  git commit message
+* <https://meetup.toast.com/posts/106?fbclid=IwAR2-0JzQY1_nra1XjTKIOScI9cHvuSNJrernv0DfXHN8Ckc1HtEOk3KqmKU> git commit message2
