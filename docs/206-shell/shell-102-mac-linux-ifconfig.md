@@ -5,24 +5,12 @@ parent: shell
 nav_order: 206102
 ---
 
-```html
-brew install zsh zsh-completions
 
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+ifconfig는 네트워크 인터페이스 시스템 관리 유틸리티입니다.
 
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+## ifconfig 네트워크 끄기/켜기
+* sudo ifconfig en7 up
+* sudo ifconfig en7 down
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-vim ~/.zshrc
-
-plugins=(
-git
-zsh-syntax-highlighting
-zsh-autosuggestions
-)
-
-```
-
-### 참고링크
-* zsh https://nolboo.kim/blog/2015/08/21/oh-my-zsh/
+## ifconfig ip 확인
+* ifconfig
