@@ -2,7 +2,7 @@
 layout: default
 title: General first class citizen 일급 객체
 parent: general
-nav_order: 300100
+nav_order: 400100
 ---
 
 ## 일급 객체란?
