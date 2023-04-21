@@ -25,3 +25,7 @@ minikube start --driver=docker
 ## kubectl 설치
 brew install kubectl
 
+## k8s 확인
+* minikube를 설치했다면 minikube context가 이미 세팅이 되어있다.
+* kubectl config use-context minikube : minikube로 context 지정
+* kubectl get namespace : 기본 세팅된 네임스페이스 확인
