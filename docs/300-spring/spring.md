@@ -22,3 +22,4 @@ sitemap:
 * spring applicationEventPublisher <https://engkimbs.tistory.com/718>
 * spring batch chunk가 길어질때 <https://jaehun2841.github.io/2020/08/08/2020-08-08-spring-batch-db-connection-issue/#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B>
 * spring filter intercepter 차이 <https://mangkyu.tistory.com/17>
+* spring bean을 어떻게 반환할까? <https://xzio.tistory.com/641>

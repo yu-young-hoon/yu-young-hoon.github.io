@@ -1,8 +1,8 @@
 ---
 layout: default
-title: tool git 명령어
-parent: tool
-nav_order: 407111
+title: git 명령어
+parent: git
+nav_order: 700111
 ---
 
 ## git checkout

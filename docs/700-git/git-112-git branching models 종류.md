@@ -1,13 +1,13 @@
 ---
 layout: default
-title: tool git branching models 종류
-parent: tool
-nav_order: 407112
+title: git branching models 종류
+parent: git
+nav_order: 700112
 ---
 
-==Git Flow==
+## Git Flow
 
-==GitHub Flow==
+## GitHub Flow
 * Master branc의 모든 지점은 배포가 가능해야한다.
 * 새로운 작업은 마스터에서 생성되고 설명이 될수 있는 이름을 줘야한다(new-oauth2-scopes)
 * 커밋은 로컬과 원격에 동일하게 push해야한다.
@@ -19,4 +19,4 @@ nav_order: 407112
 * 깃 플로우보다 간단하다
 * 싱글 버전으로 진행되는 프로젝트에 알맞다
 
-==GitLab flow==
+## GitLab flow
