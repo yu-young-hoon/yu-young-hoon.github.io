@@ -10,9 +10,18 @@ brew install minikube
 
 
 ## minikube 실행 with driver 선택
-minikube start --driver=docker
+* minikube start --driver=docke: 단독 클러스터 구성
+* minikube start --driver=docker --nodes 3: 워커노드 2개와 함께 구성
+* minikube add node: 워커 노드 추가
 ![](../../attach/mac minikube start.png)
 ![](../../attach/mac minikube docker.png)
+
+
+
+## minikube 클러스터 삭제
+* minikube stop: 중지 후 삭제해야한다.
+* minikube delete: 클러스터 컨테이너 삭제
+* minikube delete --all: 클러스터 프로필 삭제
 
 
 ## minikube dashboard 활성화
