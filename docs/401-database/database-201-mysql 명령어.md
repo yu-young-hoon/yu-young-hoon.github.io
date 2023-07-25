@@ -18,3 +18,9 @@ nav_order: 401201
 ### procedure
 * 목록보기 SHOW PROCEDURE STATUS;
 * 코드보기 SHOW CREATE PROCEDURE stored_procedure_name;
+
+### index 조회
+* SHOW INDEXES FROM table_name;
+
+### 테이블 구조 조회
+* DESC db_name.table_name;
