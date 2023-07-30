@@ -5,9 +5,11 @@ parent: shell
 nav_order: 206101
 ---
 
-```html
 # zsh 설치
 brew install zsh
+
+## omz 설치
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # 터미널 하이라이팅, 자동완성 플러그인 설치
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -28,7 +30,3 @@ DISABLE_UPDATE_PROMPT=true
 
 # oh-my-zsh 업데이트를 비활성 하고 싶다면 아래 추가
 DISABLE_AUTO_UPDATE=true
-```
-
-### 참고링크
-* zsh https://nolboo.kim/blog/2015/08/21/oh-my-zsh/
