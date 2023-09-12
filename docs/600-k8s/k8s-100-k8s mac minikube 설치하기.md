@@ -1,6 +1,6 @@
 ---
 layout: default
-title: mac minikube로 k8s 설치하기 
+title: k8s mac minikube 설치하기
 parent: k8s
 nav_order: 600100
 ---
@@ -10,9 +10,9 @@ brew install minikube
 
 
 ## minikube 실행 with driver 선택
-* minikube start --driver=docke: 단독 클러스터 구성
-* minikube start --driver=docker --nodes 3: 워커노드 2개와 함께 구성
-* minikube add node: 워커 노드 추가
+* minikube start --driver=docker : 단독 클러스터 구성
+* minikube start --driver=docker --nodes 3 : 워커노드 2개와 함께 구성
+* minikube add node : 워커 노드 추가
 ![](../../attach/mac minikube start.png)
 ![](../../attach/mac minikube docker.png)
 
@@ -31,8 +31,8 @@ brew install minikube
   ![](../../attach/mac minikube docker.png)
 
 
-## kubectl 설치
-brew install kubectl
+
+
 
 ## k8s 확인
 * minikube를 설치했다면 minikube context가 이미 세팅이 되어있다.

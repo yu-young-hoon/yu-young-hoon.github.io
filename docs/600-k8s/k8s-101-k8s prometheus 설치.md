@@ -1,8 +1,8 @@
 ---
 layout: default
-title: mac minikube로 k8s 설치하기 
+title: k8s prometheus 설치 
 parent: k8s
-nav_order: 600100
+nav_order: 600101
 ---
 
 minikube image build --tag sample-app .
