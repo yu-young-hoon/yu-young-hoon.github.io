@@ -1,9 +1,4 @@
----
-layout: default
-title: kotlin 문법
-parent: kotlin
-nav_order: 203100
----
+미작성
 
 ![](../../attach/kotlin-vs-java.png)
 
