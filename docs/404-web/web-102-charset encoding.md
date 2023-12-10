@@ -231,6 +231,9 @@ $('<div/>').html(text).text();
 ```
 자바스크립트에서 위처럼 dom을 생성하고 html안에 넣은후 결과를 다시 텍스트로 받아오는 방식으로 escape된 문자를 다시 되돌릴 수 있습니다
 
+
+TODO UTF8 encoding process 정리 https://en.wikipedia.org/wiki/UTF-8#Encoding
+
 ### 참고링크
 * [https://d2.naver.com/helloworld/76650 d2 한글인코딩]
 * [https://gist.github.com/Pusnow/aa865fa21f9557fa58d691a8b79f8a6d 한글인코딩]
