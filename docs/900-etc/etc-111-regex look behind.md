@@ -131,3 +131,7 @@ Zero-Length Assertions이란
 * https://elvanov.com/2388
 * https://community.appway.com/screen/kb/article/checking-strings-avoiding-catastrophic-backtracking-1482810891360 치명적 역추적
 * https://blog.naver.com/dsyun96/222715934643 [Kotlin] 정규식 look-behind에서 반복 제한 이슈
+* https://lktgt.tistory.com/33
+* https://regex101.com/
+* https://devopedia.org/regex-engines
+* https://learn.microsoft.com/ko-kr/dotnet/standard/base-types/backtracking-in-regular-expressions
