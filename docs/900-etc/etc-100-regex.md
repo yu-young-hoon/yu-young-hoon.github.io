@@ -1,9 +1,4 @@
----
-layout: default
-title: 정규표현식 Regular expression(regex)
-parent: etc
-nav_order: 900100
----
+임시
 
 ## lookaround
 * positive lookahead: (?=표현식) 표현식이 오른쪽에 매치될 때
@@ -42,3 +37,14 @@ nav_order: 900100
 - 처음 C -> G
 3. sed 's/(.)GT(.)/\2GT\1/g' ./cc.txt
 - 앞 뒤 교환
+
+
+### 참고링크
+* https://www.regular-expressions.info/lookaround.html
+* https://elvanov.com/2388 정규표현식 Lookahead, Lookbehind 기능 이해하기
+* https://community.appway.com/screen/kb/article/checking-strings-avoiding-catastrophic-backtracking-1482810891360 치명적 역추적
+* https://blog.naver.com/dsyun96/222715934643 [Kotlin] 정규식 look-behind에서 반복 제한 이슈
+* https://lktgt.tistory.com/33 정규표현식의 엔진과 성능
+* https://regex101.com/
+* https://devopedia.org/regex-engines
+* https://learn.microsoft.com/ko-kr/dotnet/standard/base-types/backtracking-in-regular-expressions
