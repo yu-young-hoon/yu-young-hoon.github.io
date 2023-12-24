@@ -59,22 +59,21 @@ lookaround는 이렇게 capture group과 다르게 결과를 찾을때 결과를
 
 왜 lookahead는 많이 사용하는데 lookbehind는 잘 사용하지 않고 언어에서 제공하지 않는 경우도 있을까?
 
-`
-The bad news is that most regex flavors do not allow you to use just any regex inside a lookbehind, because they cannot apply a regular expression backwards. The regular expression engine needs to be able to figure out how many characters to step back before checking the lookbehind. When evaluating the lookbehind, the regex engine determines the length of the regex inside the lookbehind, steps back that many characters in the subject string, and then applies the regex inside the lookbehind from left to right just as it would with a normal regex.
-`
+`The bad news is that most regex flavors do not allow you to use just any regex inside a lookbehind, because they cannot apply a regular expression backwards. The regular expression engine needs to be able to figure out how many characters to step back before checking the lookbehind.`
+
+`When evaluating the lookbehind, the regex engine determines the length of the regex inside the lookbehind, steps back that many characters in the subject string, and then applies the regex inside the lookbehind from left to right just as it would with a normal regex.`
 
 정규표현식 튜토리얼 사이트에서 말하길 정규식은 거꾸로 평가할수 없기 때문에 정규식엔진들은 lookbehind를 지원하지 않는다고 합니다.
 
 lookbehind를 지원할때는 뒤로 돌아갈 길이를 정하고 뒤로 돌아가 lookbehind의 정규식을 평가하는 방식을 사용하는 방식을 사용합니다.
 
-정규표현식 튜토리얼 사이트에서 java의 lookbehind 구현 방식을 설명해 놓은것은 아래와 같습니다.
-`
-Java continues to step back until the lookbehind either matches or it has stepped back the maximum number of characters
-`
+그리고 정규표현식 튜토리얼 사이트에서 java의 lookbehind 구현 방식을 설명해 놓은것은 아래와 같습니다.
+
+`Java continues to step back until the lookbehind either matches or it has stepped back the maximum number of characters`
 
 `자바에서는 lookbehind가 일지 할때 까지 한칸식 계속 물러난다는 의미로 반복적으로 평가`한다는 의미입니다. 🤩 
 
-뒤로 돌아가서 평가 하는 방식을 사용하는데 lookbehind이 (?<!ab{2,4}c{3,5}d)test 를 평가 할때 7~11글자까지 가능하므로 최소글자 7글자를 되돌아 가서 평가하고 한글자씩 뒤로 가며 반복적으로 평가하게됩니다.
+뒤로 돌아가서 평가 하는 방식을 사용하는데 lookbehind가 포함된 표현식이 `(?<!ab{2,4}c{3,5}d)test` 와 같다면 평가 할때 7~11글자까지 가능하므로 최소글자 7글자를 되돌아 가서 평가하고 한글자씩 뒤로 가며 반복적으로 평가하게됩니다.
 
 (?<=a{1,3})ghjk 를 찾는다고 하면 끝의 ghjk를 먼저 찾고 앞을 평가 하는것이 아니라 현재 위치에서 한글자 뒤로 물러나서 평가하고 일치 할때 까지 찾는 방식을 사용하고 있습니다.
 
@@ -94,9 +93,9 @@ Java continues to step back until the lookbehind either matches or it has steppe
 
 위에 이미지를 보아도 어질어질 이해가 안가지만 😭 결국 DFA는 어떤 input에 대한 상태가 하나이기 때문에 복잡한 정규 표현식을 나타내기 힘듭고 NFA는 input에 따라 상태가 변경되어 길이 변경되게 됩니다.
 
-결국 DFA는 더 엄격하고 그래프 구조에 제한이 있기 때문에 NFA의 변형(Backtracking, Bitparallel, Thompson, Tabled)중 정규표현식은 Backtracking NFA를 많이 사용하고 있습니다.
+결국 DFA는 더 엄격하고 그래프 구조에 제한이 있기 때문에 정규표현식은 NFA의 변형(Backtracking, Bitparallel, Thompson, Tabled)중 Backtracking NFA를 많이 사용하고 있습니다.
 
-Backtracking NFA의 장점은 capture group을 지원하고 lookaround, Backreferences를 지원합니다.
+참고로 Backtracking NFA의 장점은 capture group을 지원하고 lookaround, Backreferences를 지원등이 있습니다.
 
 ### Backtracking NFA를 사용하는 정규 표현식 Lookbehind를 쓰면 어떻게 될까? 
 이런 Backtracking NFA로 정규 표현식을 해석하는 순서의 예시는 아래처럼 볼수 있습니다.
