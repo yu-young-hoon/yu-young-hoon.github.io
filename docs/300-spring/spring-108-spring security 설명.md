@@ -33,3 +33,4 @@ interface someInterface {
 * spring security 설명 <https://okky.kr/article/382738>
 * spring security 구조 <https://minwan1.github.io/2017/03/25/2017-03-25-spring-security-theory/>
 * spring security EL custom <https://springboot.cloud/12>
+* spring provider 종류 https://docs.spring.io/spring-security/site/docs/4.0.x/apidocs/org/springframework/security/authentication/AuthenticationProvider.html

@@ -52,7 +52,7 @@ nav_order: 407107
 | docker --help                                       | 명령어 일람           |
 | docker login                                        | 도커 로그인           |
 | docker pull jenkins                                 | 이미지 다운로드        |
-| docker run                                          | 재설치, 컨테이너 생성    |
+| docker run                                           | 재설치, 컨테이너 생성    |
 | docker run --name point-redis -d -p 6379:6379 redis |                     |
 | docker exec -i -t point-redis redis-cli             |                     |
 
